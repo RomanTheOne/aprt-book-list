@@ -20,8 +20,14 @@ class NavBar extends Component {
   render() {
     return(
       <div className='navBar'>
-        <h1>Book Shelf</h1>
-        <DropDown value={this.props.dropDownValue} onChange={this._onDropDownChange}/>
+        <h1>Release Plan</h1>
+        <div className='dropDown'>
+          <label>
+            Load
+            <DropDown value={this.props.dropDownValue} onChange={this._onDropDownChange}/>
+            {this.props.dropDownValue === 1? 'Book' : 'Books'}
+          </label>
+        </div>
       </div>
     )
   }

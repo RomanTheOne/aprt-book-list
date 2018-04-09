@@ -1,4 +1,5 @@
 import React from 'react'
+import {number, func} from 'prop-types'
 
 const DropDown = ({dropDownOption, onChange}) => {
   return(
@@ -8,6 +9,11 @@ const DropDown = ({dropDownOption, onChange}) => {
       <option value={10}>10</option>
     </select>
   )
+};
+
+DropDown.propTypes = {
+  value: number.isRequired,
+  onChange: func.isRequired,
 };
 
 export default DropDown;

@@ -1,4 +1,6 @@
 import React from 'react'
+import { number, string, func} from 'prop-types'
+
 import './book.css'
 
 const Book = ({ id, title, description, onClick }) => {
@@ -9,9 +11,16 @@ const Book = ({ id, title, description, onClick }) => {
         <h6>{description}</h6>
       </div>
 
-      <button data-id={id} onClick={onClick}>Retitle</button>
+      <button data-id={id} onClick={onClick}>R</button>
     </div>
   )
+};
+
+Book.propTypes = {
+  id: number.isRequired,
+  title: string.isRequired,
+  description: string.isRequired,
+  onClick: func.isRequired,
 };
 
 export default Book

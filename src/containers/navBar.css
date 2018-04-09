@@ -1,5 +1,12 @@
 .navBar {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.dropDown {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }

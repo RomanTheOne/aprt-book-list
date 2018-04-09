@@ -5,6 +5,8 @@ import Book from '../components/book'
 
 import { fetchBooks, retitleBook } from '../actions/actions'
 
+import './bookShelf.css'
+
 class BookShelf extends PureComponent {
   constructor(props) {
     super(props);
@@ -30,7 +32,7 @@ class BookShelf extends PureComponent {
 
   render() {
     return(
-      <div>
+      <div className='main'>
         <div>
           {!this.props.isFetching &&
             this.props.books.map(book => {
@@ -39,7 +41,6 @@ class BookShelf extends PureComponent {
               )
             })
           }
-
         </div>
 
         <button onClick={this._onLoadMoreClick}>Load more</button>

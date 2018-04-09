@@ -1,4 +1,4 @@
-import update from 'react-addons-update';
+import update from 'immutability-helper';
 
 import { combineReducers } from 'redux'
 import {
@@ -11,9 +11,9 @@ import {
 const requestBooks = (state = { isFetching: false, books: [] }, action) => {
   switch (action.type) {
     case REQUEST_BOOKS:
-      return {...state, isFetching: true};
+      return update(state, {isFetching: {$set: true}});
     case LOAD_BOOKS:
-      return {...state, isFetching: false, books: [...state.books, ...action.books]};
+      return update(state, {isFetching: {$set: false}, books: {$push: action.books}});
     case RETITLE_BOOK:
       return update(state, {books: {[action.id]: {$merge: {title: action.data.title}}}});
     default:
